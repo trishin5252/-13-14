@@ -30,19 +30,19 @@
                 </div>
                 
                 <div class="projects-grid-large">
-                    <div class="project-card-large">
+                    <div class="project-card-large" onclick="openModal('modal1')">
                         <h3>Личный сайт</h3>
                         <p>HTML, CSS</p>
                     </div>
-                    <div class="project-card-large">
+                    <div class="project-card-large" onclick="openModal('modal2')">
                         <h3>Todo-приложение</h3>
                         <p>JavaScript</p>
                     </div>
-                    <div class="project-card-large">
+                    <div class="project-card-large" onclick="openModal('modal3')">
                         <h3>Интернет-магазин</h3>
                         <p>React</p>
                     </div>
-                    <div class="project-card-large">
+                    <div class="project-card-large" onclick="openModal('modal4')">
                         <h3>Портфолио</h3>
                         <p>Bootstrap</p>
                     </div>
@@ -54,5 +54,90 @@
             <p>© 2025 Контакты</p>
         </footer>
     </div>
+
+    <!-- Модальные окна -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Личный сайт</h3>
+            <p><strong>Технологии:</strong> HTML, CSS</p>
+            <p><strong>Описание:</strong> Персональный сайт-визитка с информацией о себе и навыках</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="#" class="btn">Живая версия</a>
+                <a href="#" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Todo-приложение</h3>
+            <p><strong>Технологии:</strong> JavaScript</p>
+            <p><strong>Описание:</strong> Приложение для управления задачами с возможностью добавления, удаления и отметки выполненных</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="#" class="btn">Живая версия</a>
+                <a href="#" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Интернет-магазин</h3>
+            <p><strong>Технологии:</strong> React</p>
+            <p><strong>Описание:</strong> Полнофункциональный интернет-магазин с корзиной и фильтрацией товаров</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="https://trishin5252.github.io/frontend-and-backend-practice/pages/goods.html" target="_blank" class="btn">Живая версия</a>
+                <a href="https://github.com/trishin5252/frontend-and-backend-practice" target="_blank" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h3>Портфолио</h3>
+            <p><strong>Технологии:</strong> Bootstrap</p>
+            <p><strong>Описание:</strong> Адаптивное портфолио с галереей проектов и контактной формой</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="#" class="btn">Живая версия</a>
+                <a href="#" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Фильтрация проектов
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
