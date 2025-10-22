@@ -7,47 +7,52 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">[ЛОГОТИП]</div>
-        <h1>Никита</h1>
-        <nav>
-            <a href="../index.html">Главная</a>
-            <a href="projects.html">Проекты</a>
-            <a href="diary.html">Дневник</a>
-            <a href="contacts.html">Контакты</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">[ЛОГОТИП]</div>
+            <h1>Никита</h1>
+            <nav>
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html">[Дневник]</a>
+                <a href="contacts.html">[Контакты]</a>
+            </nav>
+        </header>
 
-    <main>
-        <h2>Мои проекты</h2>
-        <div class="filters">
-            <button>Все</button>
-            <button>HTML</button>
-            <button>JS</button>
-            <button>React</button>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Личный сайт</h3>
-                <p>HTML, CSS</p>
+        <main>
+            <div class="card">
+                <h2>Мои проекты</h2>
+                <div class="filters">
+                    <button class="filter-btn active">[Все]</button>
+                    <button class="filter-btn">[HTML]</button>
+                    <button class="filter-btn">[JS]</button>
+                    <button class="filter-btn">[React]</button>
+                </div>
+                
+                <div class="projects-grid-large">
+                    <div class="project-card-large">
+                        <h3>Личный сайт</h3>
+                        <p>HTML, CSS</p>
+                    </div>
+                    <div class="project-card-large">
+                        <h3>Todo-приложение</h3>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="project-card-large">
+                        <h3>Интернет-магазин</h3>
+                        <p>React</p>
+                    </div>
+                    <div class="project-card-large">
+                        <h3>Портфолио</h3>
+                        <p>Bootstrap</p>
+                    </div>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Todo-приложение</h3>
-                <p>JavaScript</p>
-            </div>
-            <div class="project-card">
-                <h3>Интернет-магазин</h3>
-                <p>React</p>
-            </div>
-            <div class="project-card">
-                <h3>Портфолио</h3>
-                <p>Bootstrap</p>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <footer>
-        <p>© 2025 Контакты</p>
-    </footer>
+        <footer>
+            <p>© 2025 Контакты</p>
+        </footer>
+    </div>
 </body>
 </html>

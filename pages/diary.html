@@ -7,38 +7,53 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">[ЛОГОТИП]</div>
-        <h1>Никита</h1>
-        <nav>
-            <a href="../index.html">Главная</a>
-            <a href="projects.html">Проекты</a>
-            <a href="diary.html">Дневник</a>
-            <a href="contacts.html">Контакты</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">[ЛОГОТИП]</div>
+            <h1>Никита</h1>
+            <nav>
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html">[Дневник]</a>
+                <a href="contacts.html">[Контакты]</a>
+            </nav>
+        </header>
 
-    <main>
-        <section class="progress">
-            <h2>Мой учебный прогресс</h2>
-            <div class="progress-item">15 дек - Верстка макета сайта ✓</div>
-            <div class="progress-item">10 дек - JavaScript основы ✓</div>
-            <div class="progress-item">05 дек - Работа с формами in progress</div>
-            <div class="progress-item">01 дек - Адаптивный дизайн in progress</div>
-        </section>
+        <main>
+            <div class="diary-layout">
+                <div class="card">
+                    <h2>Мой учебный прогресс</h2>
+                    <div class="progress-items">
+                        <div class="progress-item completed">15 дек - Верстка макета сайта ✓</div>
+                        <div class="progress-item completed">10 дек - JavaScript основы ✓</div>
+                        <div class="progress-item in-progress">05 дек - Работа с формами in progress</div>
+                        <div class="progress-item in-progress">01 дек - Адаптивный дизайн in progress</div>
+                    </div>
+                </div>
 
-        <section class="courses">
-            <h2>Текущие курсы</h2>
-            <div class="course">Веб-разработка <div class="bar" style="width:90%">90%</div></div>
-            <div class="course">JavaScript <div class="bar" style="width:70%">70%</div></div>
-            <div class="course">React <div class="bar" style="width:50%">50%</div></div>
-        </section>
+                <div class="card">
+                    <h2>Текущие курсы</h2>
+                    <div class="course">
+                        <span>Веб-разработка</span>
+                        <div class="progress-bar"><div class="progress" style="width:90%">90%</div></div>
+                    </div>
+                    <div class="course">
+                        <span>JavaScript</span>
+                        <div class="progress-bar"><div class="progress" style="width:70%">70%</div></div>
+                    </div>
+                    <div class="course">
+                        <span>React</span>
+                        <div class="progress-bar"><div class="progress" style="width:50%">50%</div></div>
+                    </div>
+                    
+                    <button class="btn" style="margin-top: 20px;">[Добавить запись]</button>
+                </div>
+            </div>
+        </main>
 
-        <button class="add-entry">Добавить запись</button>
-    </main>
-
-    <footer>
-        <p>© 2025 Контакты</p>
-    </footer>
+        <footer>
+            <p>© 2025 Контакты</p>
+        </footer>
+    </div>
 </body>
 </html>

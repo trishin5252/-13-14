@@ -7,36 +7,44 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">[ЛОГОТИП]</div>
-        <h1>Никита</h1>
-        <nav>
-            <a href="../index.html">Главная</a>
-            <a href="projects.html">Проекты</a>
-            <a href="diary.html">Дневник</a>
-            <a href="contacts.html">Контакты</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">[ЛОГОТИП]</div>
+            <h1>Никита</h1>
+            <nav>
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html">[Дневник]</a>
+                <a href="contacts.html">[Контакты]</a>
+            </nav>
+        </header>
 
-    <main>
-        <h2>Свяжитесь со мной</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Имя" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Сообщение" required></textarea>
-            <button type="submit">Отправить сообщение</button>
-        </form>
+        <main>
+            <div class="contacts-layout">
+                <div class="card">
+                    <h2>Свяжитесь со мной</h2>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Имя:" required>
+                        <input type="email" placeholder="Email:" required>
+                        <textarea placeholder="Сообщение:" rows="4" required></textarea>
+                        <button type="submit" class="btn">[Отправить сообщение]</button>
+                    </form>
+                </div>
 
-        <div class="contact-info">
-            <h3>Контакты:</h3>
-            <p>��� trishin.n.d@edu.mirea.ru</p>
-            <p>��� GitHub: trishin5252</p>
-            <p>��� Москва, Российская Федерация</p>
-        </div>
-    </main>
+                <div class="card">
+                    <h3>Контакты:</h3>
+                    <div class="contact-info">
+                        <p>��� trishin.n.d@edu.mirea.ru</p>
+                        <p>��� GitHub: trishin5252</p>
+                        <p>��� Москва, Российская Федерация</p>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    <footer>
-        <p>© 2024 Контакты</p>
-    </footer>
+        <footer>
+            <p>© 2024 Контакты</p>
+        </footer>
+    </div>
 </body>
 </html>
