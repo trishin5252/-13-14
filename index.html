@@ -25,9 +25,27 @@
     <main id="main" class="main">
         <div class="container">
             <section class="hero">
-                <div class="photo">
-                    <img src="images/myphoto.jpg" alt="Фото Никита" width="150" style="max-width: 100%; height: auto;">
-                </div>
+                <figure class="hero-image">
+                    <picture>
+                        <!-- Современные форматы -->
+                        <source
+                            type="image/avif"
+                            srcset="images/myphoto-150.avif 150w, images/myphoto-200.avif 200w, images/myphoto-300.avif 300w"
+                            sizes="200px">
+                        <source
+                            type="image/webp"
+                            srcset="images/myphoto-150.webp 150w, images/myphoto-200.webp 200w, images/myphoto-300.webp 300w"
+                            sizes="200px">
+                        <!-- Запасной JPEG -->
+                        <img class="hero-photo"
+                            src="images/myphoto-200.jpg"
+                            srcset="images/myphoto-150.jpg 150w, images/myphoto-200.jpg 200w, images/myphoto-300.jpg 300w"
+                            sizes="200px"
+                            width="200" height="200"
+                            alt="Портрет Никиты"
+                            fetchpriority="high">
+                    </picture>
+                </figure>
                 <div class="intro">
                     <h2>Привет! Я студент группы ЭФБО-18-24</h2>
                     <p>Увлекаюсь веб-разработкой</p>
