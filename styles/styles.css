@@ -645,3 +645,30 @@ main .container {
         color: #f8fafc !important;
     }
 }
+
+/* Исправляем цвет текста в контактах */
+.contact-info,
+.contact-info p {
+    color: #000 !important;
+}
+
+.contact-info h3 {
+    color: #000 !important;
+    margin-bottom: 15px;
+}
+
+/* Для светлой темы оставляем черный текст */
+@media (prefers-color-scheme: light) {
+    .contact-info,
+    .contact-info p {
+        color: #000 !important;
+    }
+}
+
+/* Для темной темы оставляем светлый текст */
+@media (prefers-color-scheme: dark) {
+    .contact-info,
+    .contact-info p {
+        color: #f8fafc !important;
+    }
+}
