@@ -9,65 +9,86 @@
 <body class="page">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
-            <div class="logo"><img src="../images/52.jpg" loading="lazy" alt="Логотип" width="50" style="max-width: 100%; height: auto;"></div>
+            <div class="logo"><img src="../images/52.jpg" loading="lazy" alt="Логотип сайта - число 52" width="50" style="max-width: 100%; height: auto;"></div>
             <h1>Никита</h1>
             <nav class="nav" aria-label="Основная навигация">
                 <a href="../index.html">[Главная]</a>
-                <a href="projects.html">[Проекты]</a>
+                <a href="projects.html" aria-current="page">[Проекты]</a>
                 <a href="diary.html">[Дневник]</a>
                 <a href="contacts.html">[Контакты]</a>
             </nav>
         </div>
     </header>
 
-    <main id="main" class="main">
+    <main id="main" class="main" role="main">
         <div class="container">
             <div class="card">
                 <h2>Мои проекты</h2>
-                <div class="filters">
-                    <button class="filter-btn active">[Все]</button>
-                    <button class="filter-btn">[HTML]</button>
-                    <button class="filter-btn">[JS]</button>
-                    <button class="filter-btn">[React]</button>
+                
+                <!-- Доступные фильтры -->
+                <div class="filters" role="toolbar" aria-label="Фильтры проектов">
+                    <button class="filter-btn active" aria-pressed="true" data-filter="all">[Все]</button>
+                    <button class="filter-btn" aria-pressed="false" data-filter="html">[HTML]</button>
+                    <button class="filter-btn" aria-pressed="false" data-filter="js">[JS]</button>
+                    <button class="filter-btn" aria-pressed="false" data-filter="react">[React]</button>
                 </div>
                 
-                <div class="projects-grid-large">
-                    <div class="project-card-large" onclick="openModal('modal1')">
-                        <h3>Личный сайт</h3>
+                <!-- Сетка проектов с семантическими ролями -->
+                <div class="projects-grid-large" role="list" aria-label="Список проектов">
+                    <div class="project-card-large" role="listitem" tabindex="0" 
+                         onclick="openModal('modal1')" 
+                         onkeydown="handleProjectKeydown(event, 'modal1')"
+                         aria-labelledby="project1-title">
+                        <h3 id="project1-title">Личный сайт</h3>
                         <p>HTML, CSS</p>
+                        <span class="visually-hidden">Нажмите Enter или кликните для просмотра деталей</span>
                     </div>
-                    <div class="project-card-large" onclick="openModal('modal2')">
-                        <h3>Todo-приложение</h3>
+                    <div class="project-card-large" role="listitem" tabindex="0"
+                         onclick="openModal('modal2')"
+                         onkeydown="handleProjectKeydown(event, 'modal2')"
+                         aria-labelledby="project2-title">
+                        <h3 id="project2-title">Todo-приложение</h3>
                         <p>JavaScript</p>
+                        <span class="visually-hidden">Нажмите Enter или кликните для просмотра деталей</span>
                     </div>
-                    <div class="project-card-large" onclick="openModal('modal3')">
-                        <h3>Интернет-магазин</h3>
+                    <div class="project-card-large" role="listitem" tabindex="0"
+                         onclick="openModal('modal3')"
+                         onkeydown="handleProjectKeydown(event, 'modal3')"
+                         aria-labelledby="project3-title">
+                        <h3 id="project3-title">Интернет-магазин</h3>
                         <p>React</p>
+                        <span class="visually-hidden">Нажмите Enter или кликните для просмотра деталей</span>
                     </div>
-                    <div class="project-card-large" onclick="openModal('modal4')">
-                        <h3>Портфолио</h3>
+                    <div class="project-card-large" role="listitem" tabindex="0"
+                         onclick="openModal('modal4')"
+                         onkeydown="handleProjectKeydown(event, 'modal4')"
+                         aria-labelledby="project4-title">
+                        <h3 id="project4-title">Портфолио</h3>
                         <p>Bootstrap</p>
+                        <span class="visually-hidden">Нажмите Enter или кликните для просмотра деталей</span>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>© 2025 Контакты</p>
+            <p>© 2025 Проекты</p>
         </div>
     </footer>
 
-    <!-- Модальные окна -->
-    <div id="modal1" class="modal">
+    <!-- Доступные модальные окна -->
+    <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-describedby="modal1-desc" hidden>
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <h3>Личный сайт</h3>
-            <p><strong>Технологии:</strong> HTML, CSS</p>
-            <p><strong>Описание:</strong> Персональный сайт-визитка с информацией о себе и навыках</p>
+            <button class="close" onclick="closeModal('modal1')" aria-label="Закрыть диалоговое окно">&times;</button>
+            <h3 id="modal1-title">Личный сайт</h3>
+            <div id="modal1-desc">
+                <p><strong>Технологии:</strong> HTML, CSS</p>
+                <p><strong>Описание:</strong> Персональный сайт-визитка с информацией о себе и навыках</p>
+            </div>
             <p><strong>Ссылки:</strong></p>
             <div class="modal-links">
                 <a href="https://trishin5252.github.io/my-awesome-project.2/" target="_blank" class="btn">Живая версия</a>
@@ -76,12 +97,14 @@
         </div>
     </div>
 
-    <div id="modal2" class="modal">
+    <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-describedby="modal2-desc" hidden>
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h3>Todo-приложение</h3>
-            <p><strong>Технологии:</strong> JavaScript</p>
-            <p><strong>Описание:</strong> Приложение для управления задачами с возможностью добавления, удаления и отметки выполненных</p>
+            <button class="close" onclick="closeModal('modal2')" aria-label="Закрыть диалоговое окно">&times;</button>
+            <h3 id="modal2-title">Todo-приложение</h3>
+            <div id="modal2-desc">
+                <p><strong>Технологии:</strong> JavaScript</p>
+                <p><strong>Описание:</strong> Приложение для управления задачами с возможностью добавления, удаления и отметки выполненных</p>
+            </div>
             <p><strong>Ссылки:</strong></p>
             <div class="modal-links">
                 <a href="#" class="btn">Живая версия</a>
@@ -90,12 +113,14 @@
         </div>
     </div>
 
-    <div id="modal3" class="modal">
+    <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-describedby="modal3-desc" hidden>
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <h3>Интернет-магазин</h3>
-            <p><strong>Технологии:</strong> React</p>
-            <p><strong>Описание:</strong> Полнофункциональный интернет-магазин с корзиной и фильтрацией товаров</p>
+            <button class="close" onclick="closeModal('modal3')" aria-label="Закрыть диалоговое окно">&times;</button>
+            <h3 id="modal3-title">Интернет-магазин</h3>
+            <div id="modal3-desc">
+                <p><strong>Технологии:</strong> React</p>
+                <p><strong>Описание:</strong> Полнофункциональный интернет-магазин с корзиной и фильтрацией товаров</p>
+            </div>
             <p><strong>Ссылки:</strong></p>
             <div class="modal-links">
                 <a href="https://trishin5252.github.io/frontend-and-backend-practice/pages/goods.html" target="_blank" class="btn">Живая версия</a>
@@ -104,12 +129,14 @@
         </div>
     </div>
 
-    <div id="modal4" class="modal">
+    <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-describedby="modal4-desc" hidden>
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <h3>Портфолио</h3>
-            <p><strong>Технологии:</strong> Bootstrap</p>
-            <p><strong>Описание:</strong> Адаптивное портфолио с галереей проектов и контактной формой</p>
+            <button class="close" onclick="closeModal('modal4')" aria-label="Закрыть диалоговое окно">&times;</button>
+            <h3 id="modal4-title">Портфолио</h3>
+            <div id="modal4-desc">
+                <p><strong>Технологии:</strong> Bootstrap</p>
+                <p><strong>Описание:</strong> Адаптивное портфолио с галереей проектов и контактной формой</p>
+            </div>
             <p><strong>Ссылки:</strong></p>
             <div class="modal-links">
                 <a href="#" class="btn">Живая версия</a>
@@ -119,29 +146,115 @@
     </div>
 
     <script>
+        let previousActiveElement;
+        let currentModal = null;
+
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
+            const modal = document.getElementById(modalId);
+            previousActiveElement = document.activeElement;
+            currentModal = modalId;
+            
+            modal.hidden = false;
+            modal.style.display = 'block';
+            
+            // Скрываем основной контент от скринридера
+            document.querySelectorAll('body > *:not(.modal)').forEach(el => {
+                if (!el.contains(modal)) {
+                    el.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            // Фокусируемся на кнопке закрытия модалки
+            const closeBtn = modal.querySelector('.close');
+            closeBtn.focus();
+            
+            // Добавляем обработчик Escape
+            document.addEventListener('keydown', handleModalKeydown);
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
+            const modal = document.getElementById(modalId);
+            modal.hidden = true;
+            modal.style.display = 'none';
+            currentModal = null;
+            
+            // Возвращаем видимость основному контенту
+            document.querySelectorAll('[aria-hidden="true"]').forEach(el => {
+                el.removeAttribute('aria-hidden');
+            });
+            
+            // Возвращаем фокус на предыдущий элемент
+            if (previousActiveElement) {
+                previousActiveElement.focus();
+            }
+            
+            // Убираем обработчик
+            document.removeEventListener('keydown', handleModalKeydown);
         }
 
+        function handleModalKeydown(event) {
+            if (event.key === 'Escape' && currentModal) {
+                closeModal(currentModal);
+            }
+            
+            if (event.key === 'Tab' && currentModal) {
+                const modal = document.getElementById(currentModal);
+                const focusableElements = modal.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (event.shiftKey && document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                } else if (!event.shiftKey && document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+
+        function handleProjectKeydown(event, modalId) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openModal(modalId);
+            }
+        }
+
+        // Фильтры проектов
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-pressed', 'true');
+                
+                // Здесь можно добавить логику фильтрации
+                const filter = this.getAttribute('data-filter');
+                console.log('Фильтр:', filter);
+            });
+            
+            // Обработка клавиатуры для фильтров
+            btn.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Закрытие модалки по клику на оверлей
         window.onclick = function(event) {
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
+                if (event.target === modal) {
+                    closeModal(modal.id);
                 }
             });
         }
-
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
     </script>
 </body>
 </html>
