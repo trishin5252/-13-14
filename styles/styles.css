@@ -672,3 +672,92 @@ main .container {
         color: #f8fafc !important;
     }
 }
+
+/* Современная адаптивная Grid-сетка для проектов */
+.projects-preview {
+    margin-block: 3rem;
+}
+
+.projects-preview_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform .2s ease, box-shadow .2s ease;
+    min-width: 0;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.project-card_title,
+.project-card_description {
+    overflow-wrap: anywhere;
+}
+
+/* Обновим существующие стили проектов */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+/* Для страницы проектов */
+.projects-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card-large {
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform .2s ease, box-shadow .2s ease;
+    min-width: 0;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.project-card-large:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .project-card,
+    .project-card-large {
+        background: #1a1f35;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .projects-preview_grid {
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 1rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-preview_grid {
+        grid-template-columns: 1fr;
+    }
+}
