@@ -460,3 +460,106 @@ footer {
         padding: 1rem;
     }
 }
+
+/* Улучшения для Grid-сетки */
+.project-card-modern,
+.project-card-large {
+    min-width: 0; /* Разрешаем ужиматься */
+}
+
+.project-card_title,
+.project-card_description {
+    overflow-wrap: anywhere; /* Перенос длинных слов */
+    word-break: break-word;
+}
+
+/* Ограничим максимальную ширину карточек на широких экранах */
+.projects-preview_grid,
+.projects-grid-large {
+    justify-content: center; /* Центрируем сетку */
+}
+
+.projects-preview_grid {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 22rem)); /* Максимум 22rem */
+}
+
+.projects-grid-large {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 20rem)); /* Максимум 20rem */
+}
+
+/* Для очень широких экранов - ограничиваем общую ширину */
+@media (min-width: 1400px) {
+    .projects-preview_grid,
+    .projects-grid-large {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Улучшения для контента внутри карточек */
+.project-card-modern h3,
+.project-card-modern p,
+.project-card-large h3,
+.project-card-large p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.project-card-modern h3,
+.project-card-large h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.project-card-modern p,
+.project-card-large p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Гарантируем что контент не ломает сетку */
+.project-card-modern *,
+.project-card-large * {
+    max-width: 100%;
+}
+
+/* Улучшенные hover-эффекты */
+.project-card-modern:hover h3,
+.project-card-modern:hover p,
+.project-card-large:hover h3,
+.project-card-large:hover p {
+    opacity: 1;
+}
+
+/* Анимация появления карточек */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card-modern,
+.project-card-large {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.project-card-modern:nth-child(2),
+.project-card-large:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.project-card-modern:nth-child(3),
+.project-card-large:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.project-card-modern:nth-child(4),
+.project-card-large:nth-child(4) {
+    animation-delay: 0.3s;
+}
