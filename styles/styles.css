@@ -582,3 +582,38 @@ main .container {
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
     }
 }
+
+/* Стили для записей в дневнике */
+.progress-item {
+    padding: 10px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #ddd;
+    color: #000; /* Черный цвет текста */
+    font-weight: 500;
+}
+
+.progress-item.completed {
+    border-left-color: #4CAF50;
+    background: #f1f8e9;
+    color: #000; /* Черный цвет */
+}
+
+.progress-item.in-progress {
+    border-left-color: #ff9800;
+    background: #fff3e0;
+    color: #000; /* Черный цвет */
+}
+
+/* Для темной темы оставим светлый текст */
+@media (prefers-color-scheme: dark) {
+    .progress-item {
+        color: #f8fafc;
+    }
+    
+    .progress-item.completed,
+    .progress-item.in-progress {
+        color: #f8fafc;
+    }
+}
