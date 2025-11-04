@@ -749,3 +749,87 @@ footer {
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+/* Стили для доступности форм */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.field-hint {
+    display: block;
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+.error-message {
+    display: block;
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-weight: bold;
+}
+
+.success-message {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.required-asterisk {
+    color: #ff4444;
+}
+
+/* Улучшенные стили фокуса для доступности */
+input:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #ff4444;
+    background-color: #fff5f5;
+}
+
+/* Улучшение контраста для доступности */
+.btn {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-height: 44px; /* Минимальная высота для касания */
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn:focus {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Улучшение читаемости для скринридеров */
+.contact-info p {
+    margin: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Скрытие декоративных элементов от скринридеров */
+[aria-hidden="true"] {
+    /* Сохраняем визуальное отображение */
+}
