@@ -617,3 +617,31 @@ main .container {
         color: #f8fafc;
     }
 }
+
+/* Исправляем цвет текста в дневнике */
+.progress-items,
+.course {
+    color: #000 !important;
+}
+
+.progress-item,
+.course span {
+    color: #000 !important;
+    font-weight: 500;
+}
+
+/* Для светлой темы оставляем черный текст */
+@media (prefers-color-scheme: light) {
+    .progress-item,
+    .course span {
+        color: #000 !important;
+    }
+}
+
+/* Для темной темы оставляем светлый текст */
+@media (prefers-color-scheme: dark) {
+    .progress-item,
+    .course span {
+        color: #f8fafc !important;
+    }
+}
