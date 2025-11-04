@@ -444,3 +444,82 @@ html {
         transition: none !important;
     }
 }
+
+/* Sticky-хедер с безопасными областями */
+.header {
+    position: sticky;
+    top: 0;
+    padding-block-start: calc(.75rem + env(safe-area-inset-top));
+    padding-block-end: .75rem;
+    padding-inline-start: calc(1rem + env(safe-area-inset-left));
+    padding-inline-end: calc(1rem + env(safe-area-inset-right));
+    background: #2563eb;
+    color: #fff;
+    z-index: 100;
+    isolation: isolate;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Обновим стили для хедера */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.header .logo,
+.header h1,
+.header .nav a {
+    color: #fff;
+}
+
+.header .nav a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+/* Переопределим старые стили хедера */
+header {
+    background: #2563eb !important;
+    color: #fff;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+header .logo,
+header h1,
+header nav a {
+    color: #fff !important;
+}
+
+/* Адаптивность для sticky-хедера */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .header {
+        padding-block-start: calc(.5rem + env(safe-area-inset-top));
+        padding-block-end: .5rem;
+    }
+}
+
+/* Улучшения для темной темы */
+@media (prefers-color-scheme: dark) {
+    .header {
+        background: #1e40af !important;
+    }
+}
+
+/* Плавное появление хедера */
+.header {
+    transition: all 0.3s ease;
+}
+
+/* Убираем дублирующие отступы */
+main .container {
+    padding-top: 2rem;
+}
