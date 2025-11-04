@@ -324,3 +324,50 @@ footer {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Безопасные зоны для современных устройств */
+.container {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Адаптивные изображения */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Улучшенная адаптивность для мобильных */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+}
