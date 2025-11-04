@@ -592,3 +592,50 @@ footer {
         color: #000000 !important;
     }
 }
+
+/* Контейнерные запросы для проектов */
+@supports (container-type: inline-size) {
+    .projects-area {
+        container-type: inline-size;
+        container-name: projects;
+    }
+}
+
+@container projects (min-width: 640px) {
+    .projects-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container projects (min-width: 960px) {
+    .projects-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Плавные размеры с clamp() */
+.section-title { 
+    font-size: clamp(1.5rem, 1.1rem + 2vw, 2rem); 
+}
+
+.hero h2 { 
+    font-size: clamp(1.25rem, 1rem + 1.2vw, 1.8rem); 
+}
+
+.main .container { 
+    padding-inline: clamp(.75rem, .5rem + 1vw, 2rem); 
+}
+
+.card h3 {
+    font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem);
+}
+
+/* Ограничение ширины текста для читаемости */
+.prose { 
+    max-width: 65ch; 
+}
+
+/* Плавные размеры для контейнерных единиц */
+.card_title { 
+    font-size: clamp(1rem, 0.875rem + 2cqi, 1.5rem); 
+}
