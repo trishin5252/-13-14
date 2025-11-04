@@ -672,3 +672,28 @@ footer {
         padding: 0.75rem 1rem;
     }
 }
+
+/* Быстрые вставки */
+.section, .main { 
+    padding-inline: clamp(1rem, calc(.5rem + 1vw), 2rem); 
+}
+
+.btn { 
+    padding-block: max(.5rem, calc((44px - 1em)/2)); 
+}
+
+.hero-fullbleed {
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+}
+
+.search_input {
+    --icon: 20px; 
+    --gap: .5rem;
+    background: url(images/search.svg) no-repeat left .75rem center / var(--icon);
+    padding-left: calc(1.5rem + var(--icon) + var(--gap));
+}
+
+.footer { 
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom)); 
+}
