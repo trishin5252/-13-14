@@ -25,9 +25,12 @@
                 <div class="card">
                     <h2>Свяжитесь со мной</h2>
                     <form class="contact-form">
-                        <input type="text" placeholder="Имя:" required>
-                        <input type="email" placeholder="Email:" required>
-                        <textarea placeholder="Сообщение:" rows="4" required></textarea>
+                        <label for="name" class="visually-hidden">Имя</label>
+                        <input id="name" type="text" placeholder="Имя:" required>
+                        <label for="email" class="visually-hidden">Email</label>
+                        <input id="email" type="email" placeholder="Email:" required>
+                        <label for="message" class="visually-hidden">Сообщение</label>
+                        <textarea id="message" placeholder="Сообщение:" rows="4" required></textarea>
                         <button type="submit" class="btn">[Отправить сообщение]</button>
                     </form>
                 </div>
