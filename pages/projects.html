@@ -8,9 +8,10 @@
 </head>
 <body class="page">
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-    <div class="container">
-        <header class="header">
-            <div class="logo"><img src="../images/52.jpg" alt="Логотип" width="50"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo"><img src="../images/52.jpg" alt="Логотип" width="50" style="max-width: 100%; height: auto;"></div>
             <h1>Никита</h1>
             <nav class="nav" aria-label="Основная навигация">
                 <a href="../index.html">[Главная]</a>
@@ -18,9 +19,11 @@
                 <a href="diary.html">[Дневник]</a>
                 <a href="contacts.html">[Контакты]</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main id="main" class="main">
+    <main id="main" class="main">
+        <div class="container">
             <div class="card">
                 <h2>Мои проекты</h2>
                 <div class="filters">
@@ -49,12 +52,14 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer class="footer">
+    <footer class="footer">
+        <div class="container">
             <p>© 2025 Контакты</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <!-- Модальные окна -->
     <div id="modal1" class="modal">
@@ -122,7 +127,6 @@
             document.getElementById(modalId).style.display = 'none';
         }
 
-        // Закрытие модального окна при клике вне его
         window.onclick = function(event) {
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
@@ -132,7 +136,6 @@
             });
         }
 
-        // Фильтрация проектов
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
