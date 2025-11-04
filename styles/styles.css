@@ -563,3 +563,32 @@ footer {
 .project-card-large:nth-child(4) {
     animation-delay: 0.3s;
 }
+
+/* Делаем цифры процентов черными */
+.progress {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+/* Для прогресс-баров в навыках */
+.skill .progress {
+    color: #000000 !important;
+}
+
+/* Для прогресс-баров в курсах */
+.course .progress {
+    color: #000000 !important;
+}
+
+/* Убедимся что цифры видны на светлом фоне прогресс-баров */
+.progress-bar .progress {
+    color: #000000 !important;
+    text-shadow: 0 0 2px rgba(255,255,255,0.7);
+}
+
+/* Для темной темы оставим черные цифры (они на светлом фоне прогресс-бара) */
+@media (prefers-color-scheme: dark) {
+    .progress {
+        color: #000000 !important;
+    }
+}
