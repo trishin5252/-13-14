@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Дневник - ТЕСТ</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* ДИАГНОСТИКА ВЕРХНЕГО УРОВНЯ */
+        body::before {
+            content: "��� ДИАГНОСТИКА: CSS загружен! Классы применяются?";
+            display: block;
+            background: #2196F3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: 3px solid #FFC107;
+        }
+    </style>
+</head>
+<body class="page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <div class="container">
+        <header class="header" role="banner">
+            <div class="logo"><img src="../images/52.jpg" alt="Логотип" width="50"></div>
+            <h1>Никита - ТЕСТ ЦВЕТОВ</h1>
+            <nav class="nav" aria-label="Основная навигация">
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html" aria-current="page">[Дневник]</a>
+                <a href="contacts.html">[Контакты]</a>
+            </nav>
+        </header>
+
+        <main id="main" class="main" role="main">
+            <div class="diary-layout">
+                <div class="card">
+                    <h2>��� ТЕСТ ЦВЕТОВЫХ СТИЛЕЙ</h2>
+                    
+                    <!-- ТЕСТ 1: Completed (должен быть ЗЕЛЕНЫМ) -->
+                    <div class="progress-item completed">
+                        <span class="status-indicator">✓</span>
+                        <strong>ТЕСТ 1: ЗЕЛЕНЫЙ - Выполнено</strong>
+                        <span class="visually-hidden"> - выполнено</span>
+                    </div>
+                    
+                    <!-- ТЕСТ 2: In-progress (должен быть ОРАНЖЕВЫМ) -->
+                    <div class="progress-item in-progress">
+                        <span class="status-indicator">⟳</span>
+                        <strong>ТЕСТ 2: ОРАНЖЕВЫЙ - В процессе</strong>
+                        <span class="visually-hidden"> - в процессе</span>
+                    </div>
+                    
+                    <!-- ТЕСТ 3: Без класса (должен быть СЕРЫМ) -->
+                    <div class="progress-item">
+                        <span class="status-indicator">○</span>
+                        <strong>ТЕСТ 3: СЕРЫЙ - Без класса</strong>
+                        <span class="visually-hidden"> - без статуса</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>��� ТЕСТ ПРОГРЕСС-БАРОВ</h2>
+                    
+                    <div class="course">
+                        <div class="course-header">
+                            <span>Веб-разработка - 90%</span>
+                            <span class="course-percentage">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:90%">90%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="course">
+                        <div class="course-header">
+                            <span>JavaScript - 70%</span>
+                            <span class="course-percentage">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:70%">70%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer" role="contentinfo">
+            <p>© 2025 ТЕСТ СТИЛЕЙ</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1064,3 +1064,91 @@ textarea[aria-invalid="true"] {
 .modal .close:focus {
     outline: 2px solid #2563eb;
 }
+/* УДАЛИМ ВСЕ ДУБЛИРУЮЩИЕСЯ СТИЛИ И СДЕЛАЕМ ПРОСТЫЕ РАБОЧИЕ */
+
+/* Стили для прогресс-баров дневника - ФИКСИРОВАННЫЕ */
+.progress-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1a1a1a; /* ФИКСИРОВАННЫЙ ЦВЕТ вместо var() */
+}
+
+/* ЯРКИЕ И КОНТРАСТНЫЕ ЦВЕТА */
+.progress-item.completed {
+    background: #1b5e20 !important; /* ТЕМНО-ЗЕЛЕНЫЙ */
+    border-left: 6px solid #4CAF50 !important;
+}
+
+.progress-item.in-progress {
+    background: #5d4037 !important; /* ТЕМНО-ОРАНЖЕВЫЙ */
+    border-left: 6px solid #FF9800 !important;
+}
+
+.status-indicator {
+    font-weight: bold;
+    width: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Стили для курсов */
+.course {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #1a1a1a; /* ФИКСИРОВАННЫЙ ЦВЕТ */
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.course-percentage {
+    font-weight: bold;
+    color: #ffffff;
+    background: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Прогресс-бары */
+.progress-bar {
+    background: #333;
+    border-radius: 10px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    background: linear-gradient(90deg, #ffffff, #cccccc);
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000 !important;
+    text-shadow: 0 0 2px rgba(255,255,255,0.7);
+}
