@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo"><img src="../images/52.jpg" alt="Логотип" width="50" style="max-width: 100%; height: auto;"></div>
+            <h1>Никита</h1>
+            <nav class="nav" aria-label="Основная навигация">
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html">[Дневник]</a>
+                <a href="contacts.html" aria-current="page">[Контакты]</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main" role="main">
+        <div class="container">
+            <div class="contacts-layout">
+                <div class="card">
+                    <h2>Свяжитесь со мной</h2>
+                    <form class="contact-form" aria-labelledby="form-title">
+                        <fieldset>
+                            <legend id="form-title" class="visually-hidden">Форма обратной связи</legend>
+                            
+                            <div class="form-group">
+                                <label for="name">Имя:</label>
+                                <input id="name" name="name" type="text" required aria-required="true" aria-describedby="name-hint">
+                                <span id="name-hint" class="visually-hidden">Введите ваше полное имя</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-hint">
+                                <span id="email-hint" class="visually-hidden">Введите ваш email для ответа</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Сообщение:</label>
+                                <textarea id="message" name="message" rows="4" required aria-required="true" aria-describedby="message-hint"></textarea>
+                                <span id="message-hint" class="visually-hidden">Введите текст вашего сообщения</span>
+                            </div>
+
+                            <button type="submit" class="btn">[Отправить сообщение]</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>Контакты:</h3>
+                    <div class="contact-info" aria-label="Контактная информация">
+                        <p>��� trishin.n.d@edu.mirea.ru</p>
+                        <p>��� GitHub: trishin5252</p>
+                        <p>��� Москва, Российская Федерация</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>© 2024 Контакты</p>
+        </div>
+    </footer>
+</body>
+</html>
