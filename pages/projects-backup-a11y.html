@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo"><img src="../images/52.jpg" loading="lazy" alt="Логотип" width="50" style="max-width: 100%; height: auto;"></div>
+            <h1>Никита</h1>
+            <nav class="nav" aria-label="Основная навигация">
+                <a href="../index.html">[Главная]</a>
+                <a href="projects.html">[Проекты]</a>
+                <a href="diary.html">[Дневник]</a>
+                <a href="contacts.html">[Контакты]</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="container">
+            <div class="card">
+                <h2>Мои проекты</h2>
+                <div class="filters">
+                    <button class="filter-btn active">[Все]</button>
+                    <button class="filter-btn">[HTML]</button>
+                    <button class="filter-btn">[JS]</button>
+                    <button class="filter-btn">[React]</button>
+                </div>
+                
+                <div class="projects-grid-large">
+                    <div class="project-card-large" onclick="openModal('modal1')">
+                        <h3>Личный сайт</h3>
+                        <p>HTML, CSS</p>
+                    </div>
+                    <div class="project-card-large" onclick="openModal('modal2')">
+                        <h3>Todo-приложение</h3>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="project-card-large" onclick="openModal('modal3')">
+                        <h3>Интернет-магазин</h3>
+                        <p>React</p>
+                    </div>
+                    <div class="project-card-large" onclick="openModal('modal4')">
+                        <h3>Портфолио</h3>
+                        <p>Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Контакты</p>
+        </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Личный сайт</h3>
+            <p><strong>Технологии:</strong> HTML, CSS</p>
+            <p><strong>Описание:</strong> Персональный сайт-визитка с информацией о себе и навыках</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="https://trishin5252.github.io/my-awesome-project.2/" target="_blank" class="btn">Живая версия</a>
+                <a href="https://github.com/trishin5252/my-awesome-project.2" target="_blank" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Todo-приложение</h3>
+            <p><strong>Технологии:</strong> JavaScript</p>
+            <p><strong>Описание:</strong> Приложение для управления задачами с возможностью добавления, удаления и отметки выполненных</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="#" class="btn">Живая версия</a>
+                <a href="#" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Интернет-магазин</h3>
+            <p><strong>Технологии:</strong> React</p>
+            <p><strong>Описание:</strong> Полнофункциональный интернет-магазин с корзиной и фильтрацией товаров</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="https://trishin5252.github.io/frontend-and-backend-practice/pages/goods.html" target="_blank" class="btn">Живая версия</a>
+                <a href="https://github.com/trishin5252/frontend-and-backend-practice" target="_blank" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h3>Портфолио</h3>
+            <p><strong>Технологии:</strong> Bootstrap</p>
+            <p><strong>Описание:</strong> Адаптивное портфолио с галереей проектов и контактной формой</p>
+            <p><strong>Ссылки:</strong></p>
+            <div class="modal-links">
+                <a href="#" class="btn">Живая версия</a>
+                <a href="#" class="btn">Исходный код</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <script src="../scripts/a11y-test.js"></script>
+</body>
+</html>
